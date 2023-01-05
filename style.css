@@ -2,3 +2,153 @@
   font-family: Norse-Bold;
   src: url(/fonts/Norse-Bold.otf);
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* background and logo */
+
+.side-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  background-image: url("img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Norse-Bold;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: black;
+  opacity: 0.7;
+}
+
+.logo img {
+  width: 5rem;
+  height: 5rem;
+  opacity: 0.7;
+  margin-right: 5%;
+}
+
+.logo h1 {
+  color: white;
+  font-size: 2.4rem;
+}
+
+/* information about site */
+
+.fake-website-info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 10px;
+}
+
+.fake-website-info h2,
+.fake-website-info h3 {
+  font-size: 16px;
+}
+
+.fake-website-info h3 {
+  margin-top: 10px;
+}
+
+/* form */
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  font-weight: bold;
+}
+
+form p {
+  font-size: 1.2rem;
+}
+
+form fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border: none;
+}
+
+form fieldset p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.form-container li label {
+  margin-bottom: 10px;
+}
+
+.form-container li input {
+  border-radius: 5px;
+  padding: 3px 15px;
+  border: 2px solid rgb(224, 224, 224);
+  font-size: 1rem;
+  font-family: Norse-Bold, sans-serif;
+  outline: none;
+}
+
+.form-container li input:focus {
+  border: 2px solid #063d55;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.form-container li input:valid:required {
+  border: 2px solid rgb(0, 120, 0);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.form-container li input:invalid:required {
+  border: 2px solid rgb(120, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+form button {
+  width: 220px;
+  padding: 10px 30px;
+  margin: 20px auto 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.2rem;
+  background-color: #063d55;
+  color: white;
+}
+
+.log-in {
+  margin: 30px auto;
+  text-decoration: none;
+}
+
+.log-in a {
+  text-decoration: none;
+  color: #063d55;
+}
