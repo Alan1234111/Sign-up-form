@@ -15,52 +15,57 @@
       </div>
     </div>
 
-
     <div class="form-section">
-   
-     <div class="fake-website-info">
-       <h2>This is not a real online service! You know you need something like this in your live to help you realize your deppest dreams. Sign up now to get started <h2>
-       <h3>You know you want to.</h3>
-     </div>
+      <header class="header">
+        <h2>This is not a real online service! You know you need something like this in your live to help you realize your deppest dreams. Sign up now to get started.</h2>
+        <p>You know you want to.</p>
+      </header>
 
-      <form action=".">
-          
-          <fieldset>
-              
-              <p>Let's do this!</p>
-      <ul class="form-container">
-          <li>
-            <label for="name">FIRST NAME</label>
-            <input type="text" id="name" name="name" required/>
-          </li>
-          <li>
-            <label for="name">LAST NAME</label>
-            <input type="text" id="surname" name="surname" required/>
-          </li>
-          <li>
-            <label for="mail">EMAIL</label>
-            <input type="email" id="mail" name="mail" required/>
-            <span>Email is already taken</span>
-          </li>
-          <li>
-            <label for="tel">PHONE NUMBER</label>
-            <input type="tel" id="tel" name="tel" />
-          </li>
-          <li>
-            <label for="pwd">PASSWORD</label>
-            <input type="text" id="pwd" name="password" required/>
-          </li>
-          <li>
-            <label for="repeat-pwd">CONFIRM PASSWORD</label>
-            <input type="text" id="repeat-pwd" name="repeat-password" required/>
-          </li>
-        </ul>
-      </fieldset>
+      <div class="input-section">
+        <div class="form-information">
+          <p class="form-information__incentive">Let's do this!</p>
+          <p class="form-information__required">Fields marked with an asterisk (*) are required</p>
+        </div>
 
-        <button>Create Account</button>
-        <p class="log-in">Already have an account? <a href="#">Log in</a></p>
-      </form>
+        <form action="" id="create-account" class="create-account">
+          <div class="create-account-input">
+            <input id="name" placeholder="First Name *" name="name" type="text" value="" pattern="^[^0-9]+$" size="30" maxlength="245" required />
+            <label for="name" data-help="¿Are you 11 from Stranger Things?">First Name</label>
+          </div>
+          <div class="create-account-input">
+            <input id="surname" placeholder="Last Name *" name="surname" type="text" value="" pattern="^[^0-9]+$" size="30" maxlength="245" required />
+            <label for="surname" data-help="A girl has no name - Arya Stark">Last Name</label>
+          </div>
+          <div class="create-account-input">
+            <input id="mail" placeholder="Email *" name="mail" type="email" value="" size="30" maxlength="245" required />
+            <label for="mail" data-help="Format email@email.com">Email</label>
+          </div>
+          <div class="create-account-input">
+            <input id="tel" placeholder="Telephone" name="tel" type="tel" pattern="[0-9]+" value="" size="30" maxlength="9" />
+            <label for="tel" data-help="Format 123-456-789">Telephone</label>
+          </div>
+          <div class="create-account-input input-password">
+            <input id="pwd" placeholder="Password *" name="pwd" type="password" value="" size="30" maxlength="245" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" />
+            <label for="pwd" data-help="Check password requirements below">Password</label>
+            <ul>
+              <li class="valid">One lowercase letter</li>
+              <li class="invalid">One uppercase letter</li>
+              <li class="invalid">One numberic value</li>
+              <li class="invalid">One special symbol</li>
+              <li class="invalid">Length 8-16</li>
+            </ul>
+          </div>
 
+          <div class="create-account-input">
+            <input id="confirm-pwd" placeholder="Confirm Password *" name="confirm-pwd" type="password" value="" size="30" maxlength="245" required />
+            <label for="confirm-pwd" data-help="Password do not match ">Confirm password</label>
+          </div>
+        </form>
+      </div>
+      <div class="submit-section">
+        <button type="submit">Create account</button>
+        <p>Already have an account? <a href="#">Log in</a></p>
+      </div>
     </div>
   </body>
 </html>

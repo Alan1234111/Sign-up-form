@@ -10,6 +10,7 @@
 }
 
 body {
+  display: flex;
   font-family: sans-serif;
   background-color: #f0f0f0;
 }
@@ -20,7 +21,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh;
+  position: relative;
+  height: 100vh;
+  width: 50vw;
   background-image: url("img/background.jpg");
   background-size: cover;
   background-position: center;
@@ -32,6 +35,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 30%;
   width: 100%;
   background-color: black;
   opacity: 0.7;
@@ -51,104 +56,245 @@ body {
 
 /* information about site */
 
-.fake-website-info {
+.form-section {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  padding: 20px 20px 10px;
 }
 
-.fake-website-info h2,
-.fake-website-info h3 {
-  font-size: 16px;
+.header {
+  padding: 5% 10%;
+  font-weight: bold;
+  font-family: sans-serif;
 }
 
-.fake-website-info h3 {
-  margin-top: 10px;
+.header h2,
+.header p {
+  font-size: 1.6rem;
+}
+
+.header p {
+  margin-top: 0px;
 }
 
 /* form */
 
-form {
-  display: flex;
-  flex-direction: column;
+.form-information {
+  width: 100%;
+  background-color: #fff;
+  font-family: sans-serif;
+  padding: 2% 20% 2% 10%;
+}
 
+.form-information__incentive {
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
-form p {
-  font-size: 1.2rem;
-}
-
-form fieldset {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  border: none;
-}
-
-form fieldset p {
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-container li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
-}
-
-.form-container li label {
-  margin-bottom: 10px;
-}
-
-.form-container li input {
-  border-radius: 5px;
-  padding: 3px 15px;
-  border: 2px solid rgb(224, 224, 224);
+.form-information__required {
   font-size: 1rem;
-  font-family: Norse-Bold, sans-serif;
-  outline: none;
+  font-weight: normal;
 }
 
-.form-container li input:focus {
-  border: 2px solid #063d55;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+.create-account {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-height: 340px;
+  padding: 0 20% 5% 10.5%;
+  background-color: #fff;
 }
 
-.form-container li input:valid:required {
-  border: 2px solid rgb(0, 120, 0);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+.create-account-input {
+  display: flex;
+  flex: 0 0 50%;
+  position: relative;
+  max-width: 50%;
+  padding: 24px 10px 12px;
+  font-size: 1rem;
+  transition: all 0.5s ease-in-out;
 }
 
-.form-container li input:invalid:required {
-  border: 2px solid rgb(120, 0, 0);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+.create-account-input input {
+  max-height: 40px;
 }
 
-form button {
-  width: 220px;
-  padding: 10px 30px;
-  margin: 20px auto 0;
-  border-radius: 8px;
+.input-password {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-password ul {
+  opacity: 0;
+  padding: 10px 0 0 20px;
+  transition: 0.4s;
+  font-family: sans-serif;
+}
+
+.input-password #pwd:focus ~ ul {
+  opacity: 1;
+}
+
+.input-password ul li {
+  list-style: none;
+}
+
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -10px;
+  content: "✓";
+}
+
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -10px;
+  content: "🗴";
+}
+
+:focus {
+  outline: 0;
+}
+
+.create-account-input:focus {
+  background-color: #fff;
+}
+
+.create-account-input input {
+  padding: 10px 80px 10px 10px;
+}
+
+@keyframes silo-fade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-1.4em);
+    -moz-transform: translateY(-1.4em);
+    -ms-transform: translateY(-1.4em);
+    -o-transform: translateY(-1.4em);
+    transform: translateY(-1.4em);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes silo-help {
+  0% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.create-account-input label {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  padding: 5px 0;
+  font-size: 0.75rem;
+  color: #8bc34a;
+  animation: silo-fade 0.2s;
+  max-width: 80%;
+}
+
+.create-account-input input:focus + label,
+.create-account-inputinput[required]:valid + label,
+.create-account-input input:not(:placeholder-shown) + label {
+  display: block;
+}
+
+.create-account-input input:invalid {
+  border: 1px solid #b92326;
+  background-color: rgba(185, 35, 38, 0.25);
+}
+
+.create-account-input input:focus:invalid {
+  background-color: transparent;
+  border: 1px solid #b92326;
+}
+.create-account-inputinput:invalid + label {
+  color: #b92326;
+}
+.create-account-input input:invalid + label {
+  color: #b92326;
+}
+.create-account-input input:focus:invalid + label:after {
+  content: " (" attr(data-help) ")";
+  animation: silo-help 100s;
+}
+.create-account-input input:invalid + label:after {
+  content: " (" attr(data-help) ")";
+}
+.create-account-input input:valid {
+  border: 1px solid #8bc34a;
+  background-color: rgba(139, 195, 74, 0.25);
+}
+.create-account-input input:focus:valid {
+  border: 1px solid #8bc34a;
+  background-color: transparent;
+}
+.create-account-input input:valid + label {
+  color: #8bc34a;
+}
+.create-account-input input:placeholder-shown {
+  background-color: transparent;
+  border: 1px solid #d8d8d8;
+}
+.create-account-input input::placeholder {
+  color: #d8d8d8;
+}
+
+/* form button */
+
+button[type="submit"] {
+  margin: 2% 5%;
+  padding: 14px 80px;
+  background-color: transparent;
+  color: #014362;
   border: none;
-  font-size: 1.2rem;
-  background-color: #063d55;
+  transition: 0.2s;
+  border: #014362 solid 1px;
+  border-radius: 6px;
+}
+
+button[type="submit"]:hover {
+  background-color: #014362;
   color: white;
 }
 
-.log-in {
-  margin: 30px auto;
-  text-decoration: none;
+.submit-section p {
+  margin: 0% 5%;
+  color: black;
 }
 
-.log-in a {
+.submit-section p a {
   text-decoration: none;
-  color: #063d55;
+  color: #014362;
+  font-weight: bold;
+  transition: 0.1s;
+}
+
+.submit-section p a:hover {
+  opacity: 0.5;
 }
