@@ -175,18 +175,10 @@ body {
 @keyframes silo-fade {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-1.4em);
-    -moz-transform: translateY(-1.4em);
-    -ms-transform: translateY(-1.4em);
-    -o-transform: translateY(-1.4em);
     transform: translateY(-1.4em);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
     transform: translateY(0);
   }
 }
@@ -233,9 +225,7 @@ body {
   background-color: transparent;
   border: 1px solid #b92326;
 }
-.create-account-inputinput:invalid + label {
-  color: #b92326;
-}
+
 .create-account-input input:invalid + label {
   color: #b92326;
 }
@@ -322,26 +312,23 @@ button[type="submit"]:hover {
 
   /* form */
 
-  .input-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   .create-account {
-    width: 100%;
+    display: flex;
+    justify-content: center;
     max-height: 600px;
+    padding: 0 15% 5% 15%;
   }
 
   .create-account-input {
-    max-width: 80%;
+    max-width: 100vw;
     padding-left: 0px;
+    padding-right: 0px;
     margin: 0 auto;
   }
 
   .create-account-input input {
     max-height: 40px;
+    max-width: 80vw;
   }
 
   .input-password {
