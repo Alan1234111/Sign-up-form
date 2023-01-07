@@ -211,7 +211,7 @@ body {
 }
 
 .create-account-input input:focus + label,
-.create-account-inputinput[required]:valid + label,
+.create-account-input input[required]:valid + label,
 .create-account-input input:not(:placeholder-shown) + label {
   display: block;
 }
