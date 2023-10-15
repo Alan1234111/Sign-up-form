@@ -1,5 +1,5 @@
-const password = document.getElementById("pwd");
-const confirmPassword = document.getElementById("confirm-pwd");
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirm-password");
 const requirements = [...document.querySelectorAll(".requirements li")];
 
 function checkIsValid() {

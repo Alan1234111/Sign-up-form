@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/index.css')
+    if user 
+      script(defer src='/javascripts/index.js')
+    
+  body
+  header.header 
+    h1 Foresting
+    nav.nav 
+      if user 
+        button#club.btn Join The Club
+        div.popup.hide
+          form(id="membership-form", method="POST", action="/add-membership-status")
+            input(type="text", class="code-input", name="passcode", placeholder="Add Membership Status")
+            button(type='submit', class='code-btn') Check Code
+        a(href="/log-out" class="btn") LOG OUT
+      else 
+        a(href="/log-in" class="btn") LOG IN
+
+  section.posts
+    if user
+       form(id="message-form", method="POST", action="/add-message")
+         input(type="text", class="add-message", name="message", placeholder="Have a nice day")
+         button(type='submit', class='add-message-btn') Add
+
+    each message in message_list
+      div.post 
+        p.message Message: #{message.message}
+        if user && user.admin 
+            form(method="POST" action='/delete-message') 
+              input(type='hidden', name='delete', required='true', value=message._id)
+              button(type='submit', class="btn-delete") X
+        if user && user.membership
+          div.user-info
+            p.date Date: #{new Date(message.createdAt).toISOString().slice(0, 10)}
+            p.author Author: #{message.author}
+          
+      
+    
+

@@ -1,0 +1,39 @@
+extends layout
+
+block content
+
+  div(class='side-hero')
+    div(class="logo")
+      img(src="images/logo.png")
+      h1 Foresting
+
+  div(class="form-section")
+    header(class="header")
+      h2 This is not a real online service! You know you need something like this in your live to help you realize your deppest dreams. Sign up now to get started.
+      p You know you want to.
+
+    div(class='input-section')
+      div(class="form-information")
+        p(class="form-information__incentive") Let's do this!
+        p(class="form-information__required") Fields marked with an asterisk (*) are required
+
+      form#create-account(method="POST" action='' class='create-account')
+        div(class='create-account-input')
+          input#username(type="text" value="" name="username" placeholder="Username *" pattern="^[^0-9]+$" size="30" maxlength="245" required)
+          label(for='username' data-help="¿Are you 11 from Stranger Things?") Username
+
+        div(class="create-account-input input-password")
+          input#password( placeholder="Password *" name="password" type="password" value="" size="30" maxlength="245" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$")
+          label(for='password' data-help="Check password requirements") Password
+
+    div(class='submit-section')
+      button(type="submit" form='create-account') Log In 
+      p
+        |  You don't have an account? 
+        a(href="/sign-up") Sign up
+
+    
+  if errors
+   ul
+    for error in errors
+     li!= error.msg
